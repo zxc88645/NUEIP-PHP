@@ -1,0 +1,27 @@
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/html/NUEIP-PHP/public/;
+	index index.php;
+	charset utf-8;
+	server_name _;
+
+	location / {
+		try_files $uri $uri/ /index.php?$query_string;
+	}
+
+	location = /favicon.ico { access_log off; log_not_found off; }
+	location = /robots.txt  { access_log off; log_not_found off; }
+
+
+	location ~ \.php$ {
+		fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+		fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+		include fastcgi_params;
+	}
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
