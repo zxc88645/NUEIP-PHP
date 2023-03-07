@@ -10,6 +10,10 @@
 - PHP    8.1
 - MySQL 8.0
 
+![image](https://user-images.githubusercontent.com/12877999/223581437-75d4aa89-b829-4e22-a0e6-ba821d6c1a38.png)
+
+---
+
 # 第一部分 主機上建設容器
 
 ## 用 Ubuntu 映像創建容器 並指定 3000 轉到容器80
