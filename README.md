@@ -83,3 +83,7 @@ php artisan view:cache
 
 php artisan migrate
 ```
+# RUN
+```
+http://localhost:3000/NUEIP/accounts
+```
